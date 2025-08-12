@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pizza Hub - Order Your Favorite Pizza</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #fff8f0;
+    }
+    header {
+        background: tomato;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+    }
+    #searchBar {
+        width: 80%;
+        padding: 10px;
+        margin: 15px auto;
+        display: block;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .pizza-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        padding: 10px;
+    }
+    .pizza-card {
+        background: white;
+        border-radius: 10px;
+        width: 250px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        padding: 10px;
+    }
+    .pizza-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    button {
+        background: tomato;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background: darkred;
+    }
+</style>
+</head>
+<body>
+
+<header>🍕 Pizza Hub</header>
+
+<input type="text" id="searchBar" placeholder="Search for a pizza..." onkeyup="searchPizza()">
+
+<div class="pizza-container" id="pizzaList">
+    <div class="pizza-card">
+        <img src="https://simplyhomecooked.com/wp-content/uploads/2023/04/Margherita-Pizza-3.jpg" alt="Margherita">
+        <h3>Margherita</h3>
+        <p>Classic cheese pizza with tomato sauce.</p>
+        <button onclick="orderPizza('Margherita')">Order Now</button>
+    </div>
+
+    <div class="pizza-card">
+        <img src="https://grub24s3.s3.eu-west-2.amazonaws.com/upload/1702561436-Pizza.jpg" alt="Farmhouse">
+        <h3>Farmhouse</h3>
+        <p>Loaded with veggies and cheese.</p>
+        <button onclick="orderPizza('Farmhouse')">Order Now</button>
+    </div>
+
+    <div class="pizza-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYqDLeT-2mrIbCXC3VyuWMBIr4EDJgvqqYPA&s" alt="Peppy Paneer">
+        <h3>Peppy Paneer</h3>
+        <p>Paneer, capsicum, and spicy flavors.</p>
+        <button onclick="orderPizza('Peppy Paneer')">Order Now</button>
+    </div>
+
+    <div class="pizza-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBRjKppC6nnaU3yqVkKtu1RQTj41benQFlyQ&s" alt="Veg Extravaganza">
+        <h3>Veg Extravaganza</h3>
+        <p>Cheese burst with veggies.</p>
+        <button onclick="orderPizza('Veg Extravaganza')">Order Now</button>
+    </div>
+
+    <div class="pizza-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Lg0RJhrM6KxLfa3gQt4GYRC8Pkq-XTgOqA&s" alt="Deluxe Veggie">
+        <h3>Deluxe Veggie</h3>
+        <p>Ultimate veggie lovers' choice.</p>
+        <button onclick="orderPizza('Deluxe Veggie')">Order Now</button>
+    </div>
+
+    <div class="pizza-card">
+        <img src="https://www.midwestliving.com/thmb/G3d5YP-pdlEOWdOGb7MW2FGOvTY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/101685028_sweet-corn-pizza-fbe5efe0081548c9b83ed8aa4a2b5887.jpg" alt="Cheese n Corn">
+        <h3>Cheese n Corn</h3>
+        <p>Cheesy goodness with corn topping.</p>
+        <button onclick="orderPizza('Cheese n Corn')">Order Now</button>
+    </div>
+
+    <div class="pizza-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTQAoZGkbw4d5ytjs3VutXqZ7EN1eAkDUE1Q&s" alt="Cheese n Corn">
+        <h3>Cheese n </h3>
+        <p>Cheesy goodness with corn topping.</p>
+        <button onclick="orderPizza('Cheese n Corn')">Order Now</button>
+    </div>
+
+
+
+
+    <div class="pizza-card">
+      <img src="https://www.recipetineats.com/tachyon/2022/08/Stack-of-cheeseburgers.jpg" alt="Cheese n Corn">
+      <h3>Cheese n burger</h3>
+      <p>Cheesy goodness with corn topping.</p>
+      <button onclick="orderPizza('Cheese n Corn')">Order Now</button>
+    </div>
+
+<div class="pizza-card">
+    <img src="https://storage.googleapis.com/shy-pub/278648/1670566146159_SKU-0001_0.jpg" alt="Veggie Delight">
+    <h3>Veggie Delight</h3>
+    <p>Loaded with fresh vegetables and herbs.</p>
+    <button onclick="orderPizza('Veggie Delight')">Order Now</button>
+</div>
+
+<div class="pizza-card">
+    <img src="https://crownful.s3.amazonaws.com/recipe/6c46024a2d6a4a6499c5a1a62d8cdd5b.png" alt="Margherita">
+    <h3>french fries</h3>
+    <p>Classic pizza with mozzarella, and basil.</p>
+    <button onclick="orderPizza('Margherita')">Order Now</button>
+</div>
+
+<div class="pizza-card">
+    <img src="https://www.moulinex.com.eg/medias/?context=bWFzdGVyfHJvb3R8MTQzNTExfGFwcGxpY2F0aW9uL29jdGV0LXN0cmVhbXxhRFl5TDJneE9TOHhNekV4TVRjM01UVXlPVEkwTmk1aWFXNHw3NTkwMmNjYmFhZTUwZjYwNzk0ZmQyNjVmMjEzYjZiNGI3YzU1NGI3ZGNjYjM3YjYxZGY5Y2Y0ZTdjZmZkZmNj" alt="Pepperoni Feast">
+    <h3>Pepperoni Feast</h3>
+    <p>Spicy and flavorful pepperoni topping.</p>
+    <button onclick="orderPizza('Pepperoni Feast')">Order Now</button>
+</div>
+
+<div class="pizza-card">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUjbZMvjS6jgZJQRFBfVuetaVmPytrjWPcfg&s" alt="Pepperoni Feast">
+    <h3>normal pizza</h3>
+    <p>Spicy and flavorful pepperoni topping.</p>
+    <button onclick="orderPizza('Pepperoni Feast')">Order Now</button>
+</div>
+
+
+
+
+
+
+</div>
+
+<script>
+    function searchPizza() {
+        let input = document.getElementById("searchBar").value.toLowerCase();
+        let pizzas = document.querySelectorAll(".pizza-card");
+        pizzas.forEach(pizza => {
+            let name = pizza.querySelector("h3").innerText.toLowerCase();
+            if (name.includes(input)) {
+                pizza.style.display = "block";
+            } else {
+                pizza.style.display = "none";
+            }
+        });
+    }
+
+    function orderPizza(pizzaName) {
+        alert("🍕 You have ordered: " + pizzaName + "\nThank you for ordering from Pizza Hub!");
+    }
+</script>
+
+</body>
+</html>
